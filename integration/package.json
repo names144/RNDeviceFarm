@@ -1,0 +1,33 @@
+{
+  "name": "integration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Integration tests and runner",
+  "scripts": {
+    "package": "npm install && npx npm-bundle && zip -r integration-tests.zip *.tgz && rm *.tgz",
+    "test:android:local": "npx wdio ./wdio.android.local.conf.js",
+    "test:android": "npx wdio ./wdio.android.conf.js",
+    "test:ios:local": "npx wdio ./wdio.ios.local.conf.js",
+    "test:ios": "npx wdio ./wdio.ios.conf.js"
+  },
+  "dependencies": {
+    "@wdio/cli": "^5.7.5",
+    "@wdio/jasmine-framework": "^5.7.6",
+    "@wdio/local-runner": "^5.7.6",
+    "@wdio/spec-reporter": "^5.7.2",
+    "@wdio/sync": "^5.7.6",
+    "webdriverio": "^5.7.5"
+  },
+  "devDependencies": {
+    "glob": "^7.1.3",
+    "npm-bundle": "^3.0.3"
+  },
+  "bundledDependencies": [
+    "@wdio/cli",
+    "@wdio/jasmine-framework",
+    "@wdio/local-runner",
+    "@wdio/spec-reporter",
+    "@wdio/sync",
+    "webdriverio"
+  ]
+}
